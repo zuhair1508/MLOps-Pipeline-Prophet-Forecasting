@@ -1,6 +1,4 @@
-import os
 import pandas as pd
-import rich
 from src.main import run_optimisation
 
 result = run_optimisation(
