@@ -7,7 +7,7 @@ MAXIMUM_ALLOCATION = 1
 RISK_AVERSION = 5
 
 # Date defaults
-START_DATE = "2024-01-01"  # Default start date for historical data
+START_DATE = "2025-01-01"  # Default start date for historical data
 END_DATE = datetime.now().strftime("%Y-%m-%d")
 
 # Stock Allocation
