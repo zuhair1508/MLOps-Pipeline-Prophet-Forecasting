@@ -1,3 +1,14 @@
+---
+title: MLOps-Prophet-Forecasting-For-Portfolio-Optimization
+emoji: 🤖
+colorFrom: blue
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.25.0
+app_file: streamlit_app.py
+pinned: false
+---
+
 # Prophet Forecasting for Portfolio Optimisation
 
 ## Project Overview
