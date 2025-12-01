@@ -1,10 +1,9 @@
 import pandas as pd
+
 from src.main import run_optimisation
 
 result = run_optimisation(
-    tickers=["AAPL", "MSFT", "GOOGL"],
-    start_date="2025-01-01",
-    end_date="2025-11-30"
+    tickers=["AAPL", "MSFT", "GOOGL"], start_date="2025-01-01", end_date="2025-11-30"
 )
 
 print(f"Optimal Weights: {result['weights']}")
