@@ -1,3 +1,5 @@
+OS := $(shell uname 2>/dev/null || echo Windows)
+
 .PHONY: install install-dev lint format type-check test clean run dashboard
 
 install:
@@ -21,6 +23,11 @@ test:
 	poetry run pytest
 
 clean:
+ifeq ($(OS), Windows)
+	powershell -Command "Get-ChildItem -Recurse -Directory -Filter '__pycache__' | Remove-Item -Recurse -Force"
+	powershell -Command "Get-ChildItem -Recurse -Include *.pyc,*.pyo,*.pyd,.coverage | Remove-Item -Force"
+	powershell -Command "Get-ChildItem -Recurse -Directory -Include *.egg-info,.pytest_cache,.mypy_cache,.ruff_cache,htmlcov | Remove-Item -Recurse -Force"
+else
 	find . -type d -name "__pycache__" -exec rm -r {} +
 	find . -type f -name "*.pyc" -delete
 	find . -type f -name "*.pyo" -delete
@@ -31,6 +38,7 @@ clean:
 	find . -type d -name ".mypy_cache" -exec rm -r {} +
 	find . -type d -name ".ruff_cache" -exec rm -r {} +
 	find . -type d -name "htmlcov" -exec rm -r {} +
+endif
 
 check: format lint type-check test
 
