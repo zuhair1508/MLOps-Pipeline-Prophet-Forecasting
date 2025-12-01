@@ -12,10 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@master
-        with:
-          host: 31.97.116.211
-          username: root
-          key: ${{ secrets.GH }}
-          script: /root/Prophet-Forecasting-For-Portfolio-Optimisation/scripts/deploy.sh
+      - name: Add remote
+        env:
+          HF: ${{ secrets.HG }}
+        run: git remote add space https://huggingface.co/spaces/zuhair96/Prophet-Forecasting
+
+      - name: Push to hub
+        env:
+          HF: ${{ secrets.HG }}
+        run: git push --force https://huggingface.co/spaces/zuhair96/Prophet-Forecasting
+        
