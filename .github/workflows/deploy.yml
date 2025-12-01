@@ -1,4 +1,4 @@
-name: Deploy to Hostinger VPS
+name: Deploy to Huggingface Spaces
 
 on:
   push:
@@ -17,5 +17,5 @@ jobs:
         with:
           host: 31.97.116.211
           username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.GH }}
           script: /root/Prophet-Forecasting-For-Portfolio-Optimisation/scripts/deploy.sh
