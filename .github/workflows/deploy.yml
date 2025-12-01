@@ -15,10 +15,10 @@ jobs:
       - name: Add remote
         env:
           HF: ${{ secrets.HG }}
-        run: git remote add space https://zuhair96:$HFhuggingface.co/spaces/zuhair96/Prophet-Forecasting
+        run: git remote add space https://zuhair96:$HF@huggingface.co/spaces/zuhair96/Prophet-Forecasting
 
       - name: Push to hub
         env:
           HF: ${{ secrets.HG }}
-        run: git push --force https://zuhair96:$HFhuggingface.co/spaces/zuhair96/Prophet-Forecasting
+        run: git push --force https://zuhair96:$HF@huggingface.co/spaces/zuhair96/Prophet-Forecasting
         
