@@ -3,8 +3,7 @@ title: MLOps-Prophet-Forecasting-For-Portfolio-Optimization
 emoji: 🤖
 colorFrom: blue
 colorTo: blue
-sdk: streamlit
-sdk_version: 1.25.0
+sdk: docker
 app_file: src/streamlit_app.py
 pinned: false
 ---

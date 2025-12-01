@@ -18,7 +18,8 @@ COPY pyproject.toml
 RUN pip install --no-cache-dir poetry
 
 # Install dependencies
-RUN poetry config virtualenvs.create false && make install-dev
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-dev --no-interaction --no-ansi
 
 # Copy the rest of the app
 COPY /src ./src/
