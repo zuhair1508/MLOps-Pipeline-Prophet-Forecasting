@@ -5,7 +5,7 @@ colorFrom: blue
 colorTo: blue
 sdk: streamlit
 sdk_version: 1.25.0
-app_file: streamlit_app.py
+app_file: src/streamlit_app.py
 pinned: false
 ---
 
