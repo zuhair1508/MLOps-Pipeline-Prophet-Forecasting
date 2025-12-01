@@ -7,6 +7,7 @@ import sys
 from typing import Any
 
 import pandas as pd
+from dotenv import load_dotenv
 
 from src.database import save_results_to_supabase
 from src.extractor import extract_data
@@ -14,6 +15,8 @@ from src.model import ProphetModel
 from src.optimiser import optimize_portfolio_mean_variance
 from src.processor import append_predictions, collect_recent_prices, preprocess_data
 from src.settings import END_DATE, PORTFOLIO_TICKERS, START_DATE
+
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
